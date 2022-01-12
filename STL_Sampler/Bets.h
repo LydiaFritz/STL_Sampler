@@ -14,6 +14,22 @@ public:
         bet = 0;
     }
     int placeBet() {
+        cout << "How much would you like to wager? ";
+        cin >> bet;
+        while (bet > chips) {
+            cout << "You only have " << chips << " left.  How much would you like to wager? ";
+            cin >> bet;
+        }
+        chips -= bet;
+        return chips;
+    }
+
+    
+};
+
+/*
+* //Originally contained a recursive call
+    int placeBet() {
         cout << "How much would like to wager?" << endl;
         cin >> bet;
         if (bet > chips) {
@@ -24,7 +40,7 @@ public:
 
         return chips = chips - bet;
     }
-};
+*/
 
 #endif
 
